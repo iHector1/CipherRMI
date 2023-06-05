@@ -28,12 +28,13 @@ public class Implementation extends UnicastRemoteObject implements InterfaceServ
     @Override
     public void receiveMessage(String message) throws RemoteException {
         this.string = this.string+ "\n"+message;
-
+        messageFlag=true;
+        System.out.println("Mensaje enviado");
     }
 
     @Override
     public void getNumber(int numeber) throws RemoteException {
-        this.number=number;
+        this.number=numeber;
         numberFlag = true;
         System.out.println("Numero recibido");
     }
